@@ -1,0 +1,6 @@
+targets:
+  $default:
+    builders:
+      intl_translation:generate_from_arb:
+        options:
+          generated_file_prefix: "intl/"

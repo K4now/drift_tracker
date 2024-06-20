@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299030933687",
+    "project_id": "drift-478f4",
+    "storage_bucket": "drift-478f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299030933687:android:80823e6c5e3abeed031d32",
+        "android_client_info": {
+          "package_name": "com.drift.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChwLSobGkPnndNZegFwRHUZL0LNZICmaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
