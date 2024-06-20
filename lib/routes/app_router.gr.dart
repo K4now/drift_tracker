@@ -13,8 +13,6 @@ import 'package:drift_tracker/src/features/authentication/presentation/pages/log
     as _i2;
 import 'package:drift_tracker/src/features/authentication/presentation/pages/register_page.dart'
     as _i5;
-import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/measurement_page.dart'
-    as _i3;
 import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/session_detail.dart'
     as _i6;
 import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/session_page.dart'

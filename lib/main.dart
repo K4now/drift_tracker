@@ -20,7 +20,6 @@ import 'package:drift_tracker/routes/app_router.dart';
 import 'package:drift_tracker/src/features/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:drift_tracker/src/features/drift_sessions/domain/usecases/add_session.dart';
 import 'package:drift_tracker/src/features/drift_sessions/presentation/bloc/session_bloc.dart';
-// Импортируйте ваш LanguageBloc
 
 final appRouter = AppRouter();
 

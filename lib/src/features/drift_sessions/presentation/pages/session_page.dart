@@ -1,10 +1,10 @@
-import '../../../../../generated/l10n.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../bloc/session_bloc.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:drift_tracker/routes/app_router.gr.dart';
+import '../../../../../generated/l10n.dart';
 
 @RoutePage()
 class SessionPage extends StatefulWidget {
@@ -28,6 +28,8 @@ class _SessionPageState extends State<SessionPage> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).session),
@@ -41,7 +43,8 @@ class _SessionPageState extends State<SessionPage> {
       body: BlocListener<SessionBloc, SessionState>(
         listener: (context, state) {
           if (state is SessionError) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text(state.message)));
           } else if (state is SessionDeleted) {
             _loadSessions();
           }

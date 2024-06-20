@@ -7,12 +7,11 @@ class AngleIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width - 50; // Ширина контейнера с учетом отступов
+    double width = MediaQuery.of(context).size.width - 50;
     double halfWidth = width / 2;
     double position = (angle / 180.0) * halfWidth + halfWidth;
 
-    // Обеспечиваем, что индикатор не выходит за границы контейнера
-    if (position < 5) position = 5; // Учитываем ширину индикатора
+    if (position < 5) position = 5;
     if (position > width - 5) position = width - 5;
 
     return Container(
@@ -33,7 +32,6 @@ class AngleIndicator extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // Красные зоны
           Positioned(
             left: 0,
             child: Container(
@@ -62,7 +60,6 @@ class AngleIndicator extends StatelessWidget {
               ),
             ),
           ),
-          // Разметка и угловые метки
           for (int i = -9; i <= 9; i++)
             Positioned(
               left: halfWidth + (i * halfWidth / 9) - 1,
@@ -85,9 +82,8 @@ class AngleIndicator extends StatelessWidget {
                 ),
               ),
             ),
-          // Индикатор угла
           Positioned(
-            left: position - 5, // Сдвиг для центрирования индикатора по середине
+            left: position - 5,
             child: Container(
               width: 10,
               height: 80,
@@ -97,7 +93,6 @@ class AngleIndicator extends StatelessWidget {
               ),
             ),
           ),
-          // Текущий угол
           Positioned(
             left: position - 25,
             top: 10,
