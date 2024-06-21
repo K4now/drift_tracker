@@ -22,7 +22,18 @@ class LandscapeProfileLayout extends StatelessWidget {
   final VoidCallback showEditCarDialog;
   final VoidCallback toggleShowCarDetails;
 
-  const LandscapeProfileLayout({Key? key, this.user, required this.showCarDetails, this.car, required this.brandController, required this.horsepowerController, required this.configController, required this.onSaveCarData, required this.showEditCarDialog, required this.toggleShowCarDetails}) : super(key: key);
+  const LandscapeProfileLayout({
+    Key? key,
+    this.user,
+    required this.showCarDetails,
+    this.car,
+    required this.brandController,
+    required this.horsepowerController,
+    required this.configController,
+    required this.onSaveCarData,
+    required this.showEditCarDialog,
+    required this.toggleShowCarDetails,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +48,8 @@ class LandscapeProfileLayout extends StatelessWidget {
                 radius: 50,
                 backgroundImage: user?.photoURL != null
                     ? NetworkImage(user!.photoURL!)
-                    : AssetImage('assets/images/default_avatar.png') as ImageProvider,
+                    : AssetImage('assets/images/default_avatar.png')
+                        as ImageProvider,
               ),
               SizedBox(height: 20),
               ProfileInfoCard(
@@ -47,55 +59,6 @@ class LandscapeProfileLayout extends StatelessWidget {
               ProfileInfoCard(
                 title: S.of(context).email,
                 value: user?.email ?? 'Email not available',
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            children: [
-              Card(
-                margin: const EdgeInsets.symmetric(vertical: 8.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        S.of(context).language,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      DropdownButtonFormField<LanguageEvent>(
-                        value: context.read<LanguageBloc>().state.locale.languageCode == 'en'
-                            ? LanguageEvent.changeToEnglish
-                            : LanguageEvent.changeToRussian,
-                        items: [
-                          DropdownMenuItem(
-                            value: LanguageEvent.changeToEnglish,
-                            child: Text('English'),
-                          ),
-                          DropdownMenuItem(
-                            value: LanguageEvent.changeToRussian,
-                            child: Text('Русский'),
-                          ),
-                        ],
-                        onChanged: (LanguageEvent? event) {
-                          if (event != null) {
-                            context.read<LanguageBloc>().add(event);
-                          }
-                        },
-                        decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          filled: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
               SizedBox(height: 20),
               TextButton(
@@ -107,6 +70,28 @@ class LandscapeProfileLayout extends StatelessWidget {
                   style: TextStyle(color: Theme.of(context).primaryColor),
                 ),
               ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  context.router.push(LeaderboardRoute());
+                },
+                child: Text(S.of(context).leaderboard),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Column(
+            children: [
               if (showCarDetails)
                 Column(
                   children: [

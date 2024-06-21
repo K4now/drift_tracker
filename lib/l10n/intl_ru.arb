@@ -41,5 +41,6 @@
   "decreaseAngle": "Уменьшить угол",
   "simulateTransition": "Симулировать переход",
   "currentAngle": "Текущий угол",
-  "session_saved": "Сессия сохранена"
+  "session_saved": "Сессия сохранена",
+  "leaderboard": "Таблица лидеров"
 }

@@ -469,6 +469,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Leaderboard`
+  String get leaderboard {
+    return Intl.message(
+      'Leaderboard',
+      name: 'leaderboard',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

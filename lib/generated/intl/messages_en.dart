@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "increaseAngle": MessageLookupByLibrary.simpleMessage("Increase Angle"),
         "increaseSpeed": MessageLookupByLibrary.simpleMessage("Increase Speed"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "leaderboard": MessageLookupByLibrary.simpleMessage("Leaderboard"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "maxAngle": MessageLookupByLibrary.simpleMessage("Max Angle"),

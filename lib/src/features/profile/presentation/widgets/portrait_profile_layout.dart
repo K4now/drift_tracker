@@ -22,7 +22,18 @@ class PortraitProfileLayout extends StatelessWidget {
   final VoidCallback showEditCarDialog;
   final VoidCallback toggleShowCarDetails;
 
-  const PortraitProfileLayout({Key? key, this.user, required this.showCarDetails, this.car, required this.brandController, required this.horsepowerController, required this.configController, required this.onSaveCarData, required this.showEditCarDialog, required this.toggleShowCarDetails}) : super(key: key);
+  const PortraitProfileLayout({
+    Key? key,
+    this.user,
+    required this.showCarDetails,
+    this.car,
+    required this.brandController,
+    required this.horsepowerController,
+    required this.configController,
+    required this.onSaveCarData,
+    required this.showEditCarDialog,
+    required this.toggleShowCarDetails,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +131,21 @@ class PortraitProfileLayout extends StatelessWidget {
               ),
             ],
           ),
+        SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            context.router.push(LeaderboardRoute());
+          },
+          child: Text(S.of(context).leaderboard),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Theme.of(context).primaryColor,
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+          ),
+        ),
         SizedBox(height: 20),
         BlocBuilder<ProfileBloc, ProfileState>(
           builder: (context, state) {

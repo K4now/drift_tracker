@@ -9,6 +9,7 @@ import 'package:drift_tracker/src/core/global/theme_switcher.dart';
 import 'package:drift_tracker/src/features/profile/domain/entities/car.dart';
 import 'package:drift_tracker/src/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:drift_tracker/routes/app_router.gr.dart';
 import '../widgets/edit_car_dialog.dart';
 
 @RoutePage()
@@ -94,6 +95,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       : darkTheme);
             },
           ),
+          IconButton(
+            icon: Icon(Icons.leaderboard),
+            onPressed: () {
+              context.router.push(LeaderboardRoute());
+            },
+          ),
         ],
       ),
       body: BlocListener<ProfileBloc, ProfileState>(
@@ -111,7 +118,37 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
-            child: isPortrait ? PortraitProfileLayout(user: user, showCarDetails: _showCarDetails, car: _car, brandController: _brandController, horsepowerController: _horsepowerController, configController: _configController, onSaveCarData: _saveCarData, showEditCarDialog: _showEditCarDialog, toggleShowCarDetails: () => setState(() { _showCarDetails = !_showCarDetails; })) : LandscapeProfileLayout(user: user, showCarDetails: _showCarDetails, car: _car, brandController: _brandController, horsepowerController: _horsepowerController, configController: _configController, onSaveCarData: _saveCarData, showEditCarDialog: _showEditCarDialog, toggleShowCarDetails: () => setState(() { _showCarDetails = !_showCarDetails; }))
+            child: isPortrait
+                ? PortraitProfileLayout(
+                    user: user,
+                    showCarDetails: _showCarDetails,
+                    car: _car,
+                    brandController: _brandController,
+                    horsepowerController: _horsepowerController,
+                    configController: _configController,
+                    onSaveCarData: _saveCarData,
+                    showEditCarDialog: _showEditCarDialog,
+                    toggleShowCarDetails: () {
+                      setState(() {
+                        _showCarDetails = !_showCarDetails;
+                      });
+                    },
+                  )
+                : LandscapeProfileLayout(
+                    user: user,
+                    showCarDetails: _showCarDetails,
+                    car: _car,
+                    brandController: _brandController,
+                    horsepowerController: _horsepowerController,
+                    configController: _configController,
+                    onSaveCarData: _saveCarData,
+                    showEditCarDialog: _showEditCarDialog,
+                    toggleShowCarDetails: () {
+                      setState(() {
+                        _showCarDetails = !_showCarDetails;
+                      });
+                    },
+                  ),
           ),
         ),
       ),
