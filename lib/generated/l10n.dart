@@ -459,6 +459,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Session saved`
+  String get session_saved {
+    return Intl.message(
+      'Session saved',
+      name: 'session_saved',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

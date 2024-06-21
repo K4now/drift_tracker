@@ -74,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сохранить детали автомобиля"),
         "saveSession": MessageLookupByLibrary.simpleMessage("Сохранить сессию"),
         "session": MessageLookupByLibrary.simpleMessage("Сессия"),
+        "session_saved":
+            MessageLookupByLibrary.simpleMessage("Сессия сохранена"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Показать детали"),
         "simulateTransition":
             MessageLookupByLibrary.simpleMessage("Симулировать переход"),

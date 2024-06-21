@@ -1,7 +1,6 @@
-import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/user_mensure_page.dart';
 import 'package:drift_tracker/src/features/drift_sessions/presentation/widgets/action_buttons.dart';
 import 'package:drift_tracker/src/features/drift_sessions/presentation/widgets/angle_indicator.dart';
-import 'package:drift_tracker/src/features/drift_sessions/presentation/widgets/measurement_card.dart';
+import 'package:drift_tracker/src/features/measurement/presentation/widgets/measurement_card.dart';
 import 'package:flutter/material.dart';
 
 class PortraitMeasurementLayout extends StatelessWidget {

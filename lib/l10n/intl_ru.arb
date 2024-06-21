@@ -40,5 +40,6 @@
   "increaseAngle": "Увеличить угол",
   "decreaseAngle": "Уменьшить угол",
   "simulateTransition": "Симулировать переход",
-  "currentAngle": "Текущий угол"
+  "currentAngle": "Текущий угол",
+  "session_saved": "Сессия сохранена"
 }

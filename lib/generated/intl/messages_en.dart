@@ -72,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Save Car Details"),
         "saveSession": MessageLookupByLibrary.simpleMessage("Save Session"),
         "session": MessageLookupByLibrary.simpleMessage("Session"),
+        "session_saved": MessageLookupByLibrary.simpleMessage("Session saved"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Show Details"),
         "simulateTransition":
             MessageLookupByLibrary.simpleMessage("Simulate Transition"),

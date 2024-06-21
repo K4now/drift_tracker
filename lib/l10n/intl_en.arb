@@ -40,5 +40,6 @@
   "increaseAngle": "Increase Angle",
   "decreaseAngle": "Decrease Angle",
   "simulateTransition": "Simulate Transition",
-   "currentAngle": "Current Angle"
+   "currentAngle": "Current Angle",
+   "session_saved": "Session saved"
 }
