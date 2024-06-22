@@ -71,20 +71,20 @@ class LandscapeProfileLayout extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  context.router.push(LeaderboardRoute());
-                },
-                child: Text(S.of(context).leaderboard),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                ),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     context.router.push(LeaderboardRoute());
+              //   },
+              //   child: Text(S.of(context).leaderboard),
+              //   style: ElevatedButton.styleFrom(
+              //     backgroundColor: Theme.of(context).primaryColor,
+              //     foregroundColor: Colors.white,
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(15.0),
+              //     ),
+              //     padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+              //   ),
+              // ),
             ],
           ),
         ),

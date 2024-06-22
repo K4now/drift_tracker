@@ -13,6 +13,8 @@ import 'package:drift_tracker/src/features/authentication/presentation/pages/log
     as _i3;
 import 'package:drift_tracker/src/features/authentication/presentation/pages/register_page.dart'
     as _i5;
+import 'package:drift_tracker/src/features/drift_sessions/domain/entities/session.dart'
+    as _i12;
 import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/session_detail.dart'
     as _i6;
 import 'package:drift_tracker/src/features/drift_sessions/presentation/pages/session_page.dart'
@@ -70,7 +72,7 @@ abstract class $AppRouter extends _i10.RootStackRouter {
         routeData: routeData,
         child: _i6.SessionDetailPage(
           key: args.key,
-          sessionId: args.sessionId,
+          session: args.session,
         ),
       );
     },
@@ -170,13 +172,13 @@ class RegisterRoute extends _i10.PageRouteInfo<void> {
 class SessionDetailRoute extends _i10.PageRouteInfo<SessionDetailRouteArgs> {
   SessionDetailRoute({
     _i11.Key? key,
-    required String sessionId,
+    required _i12.Session session,
     List<_i10.PageRouteInfo>? children,
   }) : super(
           SessionDetailRoute.name,
           args: SessionDetailRouteArgs(
             key: key,
-            sessionId: sessionId,
+            session: session,
           ),
           initialChildren: children,
         );
@@ -190,16 +192,16 @@ class SessionDetailRoute extends _i10.PageRouteInfo<SessionDetailRouteArgs> {
 class SessionDetailRouteArgs {
   const SessionDetailRouteArgs({
     this.key,
-    required this.sessionId,
+    required this.session,
   });
 
   final _i11.Key? key;
 
-  final String sessionId;
+  final _i12.Session session;
 
   @override
   String toString() {
-    return 'SessionDetailRouteArgs{key: $key, sessionId: $sessionId}';
+    return 'SessionDetailRouteArgs{key: $key, session: $session}';
   }
 }
 

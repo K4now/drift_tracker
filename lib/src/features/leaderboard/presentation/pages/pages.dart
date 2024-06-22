@@ -1,11 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:drift_tracker/src/features/leaderboard/presentation/bloc/leaderboard_bloc.dart';
 import 'package:drift_tracker/src/features/leaderboard/presentation/bloc/leaderboard_event.dart';
 import 'package:drift_tracker/src/features/leaderboard/presentation/bloc/leaderboard_state.dart';
-import 'package:drift_tracker/src/routes/app_router.gr.dart';
-
+@RoutePage()
 class LeaderboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,16 +28,12 @@ class LeaderboardScreen extends StatelessWidget {
                 );
               },
             );
+          } else if (state is LeaderboardError) {
+            return Center(child: Text(state.message));
           } else {
-            return Center(child: Text('Failed to load leaderboard.'));
+            return Center(child: Text('No leaderboard data available'));
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // context.router.push(AddLeaderboardEntryRoute());
-        },
-        child: Icon(Icons.add),
       ),
     );
   }

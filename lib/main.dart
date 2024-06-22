@@ -76,10 +76,7 @@ void main() async {
           ),
         ),
         BlocProvider(
-          create: (context) => LeaderboardBloc(
-            getLeaderboardEntries: GetLeaderboardEntries(leaderboardRepository),
-            addLeaderboardEntry: AddLeaderboardEntry(leaderboardRepository),
-          )..add(LoadLeaderboard()),
+          create: (context) => LeaderboardBloc(leaderboardRepository)..add(LoadLeaderboard()),
         ),
       ],
       child: ThemeSwitcherWidget(

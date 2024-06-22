@@ -95,12 +95,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       : darkTheme);
             },
           ),
-          IconButton(
-            icon: Icon(Icons.leaderboard),
-            onPressed: () {
-              context.router.push(LeaderboardRoute());
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.leaderboard),
+          //   onPressed: () {
+          //     context.router.push(LeaderboardRoute());
+          //   },
+          // ),
         ],
       ),
       body: BlocListener<ProfileBloc, ProfileState>(

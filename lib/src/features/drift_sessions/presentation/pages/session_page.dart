@@ -98,7 +98,7 @@ class _SessionPageState extends State<SessionPage> {
                       title: Text('Session ${session.id}'),
                       subtitle: Text('Max Angle: ${session.maxAngle}, Points: ${session.points}, Avg Speed: ${session.averageSpeed}'),
                       onTap: () {
-                        context.router.push(SessionDetailRoute(sessionId: session.id));
+                        context.router.push(SessionDetailRoute(session: session));
                       },
                     ),
                   );

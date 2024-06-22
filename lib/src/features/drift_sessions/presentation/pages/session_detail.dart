@@ -1,11 +1,12 @@
+import '../../domain/entities/session.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
 @RoutePage()
 class SessionDetailPage extends StatelessWidget {
-  final String sessionId;
+  final Session session;
 
-  const SessionDetailPage({Key? key, required this.sessionId}) : super(key: key);
+  const SessionDetailPage({Key? key, required this.session}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,32 +15,36 @@ class SessionDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Session Details')),
       body: Center(
-        child: isPortrait ? PortraitSessionDetail(sessionId: sessionId) : LandscapeSessionDetail(sessionId: sessionId),
+        child: isPortrait ? PortraitSessionDetail(session: session) : LandscapeSessionDetail(session: session),
       ),
     );
   }
 }
 
 class PortraitSessionDetail extends StatelessWidget {
-  final String sessionId;
+  final Session session;
 
-  const PortraitSessionDetail({Key? key, required this.sessionId}) : super(key: key);
+  const PortraitSessionDetail({Key? key, required this.session}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text('Details for session: $sessionId', style: TextStyle(fontSize: 20)),
+        Text('Session ID: ${session.id}', style: TextStyle(fontSize: 20)),
+        Text('Max Angle: ${session.maxAngle}', style: TextStyle(fontSize: 20)),
+        Text('Points: ${session.points}', style: TextStyle(fontSize: 20)),
+        Text('Average Speed: ${session.averageSpeed}', style: TextStyle(fontSize: 20)),
+        // Add other session details here
       ],
     );
   }
 }
 
 class LandscapeSessionDetail extends StatelessWidget {
-  final String sessionId;
+  final Session session;
 
-  const LandscapeSessionDetail({Key? key, required this.sessionId}) : super(key: key);
+  const LandscapeSessionDetail({Key? key, required this.session}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +53,16 @@ class LandscapeSessionDetail extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Center(
-            child: Text('Details for session: $sessionId', style: TextStyle(fontSize: 20)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Session ID: ${session.id}', style: TextStyle(fontSize: 20)),
+                Text('Max Angle: ${session.maxAngle}', style: TextStyle(fontSize: 20)),
+                Text('Points: ${session.points}', style: TextStyle(fontSize: 20)),
+                Text('Average Speed: ${session.averageSpeed}', style: TextStyle(fontSize: 20)),
+                // Add other session details here
+              ],
+            ),
           ),
         ),
       ],

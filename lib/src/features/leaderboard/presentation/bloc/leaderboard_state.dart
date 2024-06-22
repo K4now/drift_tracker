@@ -1,4 +1,5 @@
-import '../../data/models/leaderboard_entry.dart';
+import 'package:drift_tracker/src/features/leaderboard/data/models/leaderboard_entry.dart';
+
 abstract class LeaderboardState {}
 
 class LeaderboardLoading extends LeaderboardState {}
@@ -14,5 +15,3 @@ class LeaderboardError extends LeaderboardState {
 
   LeaderboardError(this.message);
 }
-
-class LeaderboardEntryAdded extends LeaderboardState {}

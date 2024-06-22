@@ -2,7 +2,7 @@ part of 'session_bloc.dart';
 
 abstract class SessionState extends Equatable {
   const SessionState();
-  
+
   @override
   List<Object> get props => [];
 }
@@ -10,6 +10,8 @@ abstract class SessionState extends Equatable {
 class SessionInitial extends SessionState {}
 
 class SessionLoading extends SessionState {}
+
+class SessionAdded extends SessionState {}
 
 class SessionLoaded extends SessionState {
   final List<Session> sessions;
@@ -19,8 +21,6 @@ class SessionLoaded extends SessionState {
   @override
   List<Object> get props => [sessions];
 }
-
-class SessionAdded extends SessionState {}
 
 class SessionDeleted extends SessionState {}
 
